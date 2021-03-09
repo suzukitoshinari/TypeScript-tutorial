@@ -24,9 +24,9 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nexpo
 /*!*********************!*\
   !*** ./ts/index.ts ***!
   \*********************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar uuid_1 = __importDefault(__webpack_require__(/*! uuid */ \"./node_modules/uuid/dist/esm-browser/index.js\"));\nvar User_1 = __webpack_require__(/*! ./User */ \"./ts/User.ts\");\nvar user = new User_1.User('tanaka', 'taro', 44);\nvar contentElem = document.getElementById('contents');\nif (!!contentElem) {\n    contentElem.innerHTML = user.familyName + \" \" + user.givenName;\n}\nvar saibanButton = document.getElementById('saiban');\nvar uuidSpan = document.getElementById('uuid');\nsaibanButton.onclick = function (e) {\n    uuidSpan.innerHTML = uuid_1.default.v4();\n};\n\n\n//# sourceURL=webpack://type-tuto/./ts/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar uuid_1 = __webpack_require__(/*! uuid */ \"./node_modules/uuid/dist/esm-browser/index.js\");\nvar User_1 = __webpack_require__(/*! ./User */ \"./ts/User.ts\");\nvar user = new User_1.User('tanaka', 'taro', 44);\nvar uuId = uuid_1.v4();\nvar contentElem = document.getElementById('contents');\nif (!!contentElem) {\n    contentElem.innerHTML = user.familyName + \" \" + user.givenName;\n}\nvar word = function (Val) {\n    return Val;\n};\nvar saibanButton = document.getElementById('saiban');\nvar uuidSpan = document.getElementById('uuid');\nvar numId = document.getElementById('numId');\nvar num = document.getElementById('num');\nsaibanButton.onclick = function (e) {\n    uuidSpan.innerHTML = uuId;\n};\nnum.onclick = function (e) {\n    numId.innerHTML = word('koko');\n};\n\n\n//# sourceURL=webpack://type-tuto/./ts/index.ts?");
 
 /***/ }),
 
@@ -199,7 +199,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -238,7 +238,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = __webpack_require__("./ts/index.ts");
 /******/ 	
 /******/ })()
